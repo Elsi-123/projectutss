@@ -5,20 +5,20 @@ include_once 'db-config.php';
 
 class MasterData extends Database {
 
-    // Method untuk mendapatkan daftar program studi
-    public function getProdi(){
-        $query = "SELECT * FROM tb_prodi";
+    // Method untuk mendapatkan daftar profesi
+    public function getProfesi(){
+        $query = "SELECT * FROM tb_profesi";
         $result = $this->conn->query($query);
-        $prodi = [];
+        $profesi = [];
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $prodi[] = [
-                    'id' => $row['kode_prodi'],
-                    'nama' => $row['nama_prodi']
+                    'id' => $row['kode_profesi'],
+                    'nama' => $row['nama_profesi']
                 ];
             }
         }
-        return $prodi;
+        return $profesi;
     }
 
     // Method untuk mendapatkan daftar provinsi
@@ -40,31 +40,30 @@ class MasterData extends Database {
     // Method untuk mendapatkan daftar status mahasiswa menggunakan array statis
     public function getStatus(){
         return [
-            ['id' => 1, 'nama' => 'Aktif'],
-            ['id' => 2, 'nama' => 'Tidak Aktif'],
-            ['id' => 3, 'nama' => 'Cuti'],
-            ['id' => 4, 'nama' => 'Lulus']
+            ['id' => 1, 'nama' => 'Single'],
+            ['id' => 2, 'nama' => 'Berpacaran'],
+            ['id' => 3, 'nama' => 'Menikah']
         ];
     }
 
-    // Method untuk input data program studi
-    public function inputProdi($data){
-        $kodeProdi = $data['kode'];
-        $namaProdi = $data['nama'];
-        $query = "INSERT INTO tb_prodi (kode_prodi, nama_prodi) VALUES (?, ?)";
+    // Method untuk input data profesi
+    public function inputProfesi($data){
+        $kodeProfesi = $data['kode'];
+        $namaProfesi = $data['nama'];
+        $query = "INSERT INTO tb_profesi (kode_profesi, nama_profesi) VALUES (?, ?)";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
         }
-        $stmt->bind_param("ss", $kodeProdi, $namaProdi);
+        $stmt->bind_param("ss", $kodeProfesi, $namaProfesi);
         $result = $stmt->execute();
         $stmt->close();
         return $result;
     }
 
-    // Method untuk mendapatkan data program studi berdasarkan kode
-    public function getUpdateProdi($id){
-        $query = "SELECT * FROM tb_prodi WHERE kode_prodi = ?";
+    // Method untuk mendapatkan data profesi berdasarkan kode
+    public function getUpdateProfesi($id){
+        $query = "SELECT * FROM tb_profesi WHERE kode_profesi = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
@@ -72,36 +71,36 @@ class MasterData extends Database {
         $stmt->bind_param("s", $id);
         $stmt->execute();
         $result = $stmt->get_result();
-        $prodi = null;
+        $profesi = null;
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
             $prodi = [
-                'id' => $row['kode_prodi'],
-                'nama' => $row['nama_prodi']
+                'id' => $row['kode_profesi'],
+                'nama' => $row['nama_profesi']
             ];
         }
         $stmt->close();
-        return $prodi;
+        return $profesi;
     }
 
-    // Method untuk mengedit data program studi
-    public function updateProdi($data){
-        $kodeProdi = $data['kode'];
-        $namaProdi = $data['nama'];
-        $query = "UPDATE tb_prodi SET nama_prodi = ? WHERE kode_prodi = ?";
+    // Method untuk mengedit data profesi
+    public function updateProfesi($data){
+        $kodeProfesi = $data['kode'];
+        $namaProfesi = $data['nama'];
+        $query = "UPDATE tb_profesi SET nama_profesi = ? WHERE kode_profesi = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
         }
-        $stmt->bind_param("ss", $namaProdi, $kodeProdi);
+        $stmt->bind_param("ss", $namaProfesi, $kodeProfesi);
         $result = $stmt->execute();
         $stmt->close();
         return $result;
     }
 
-    // Method untuk menghapus data program studi
-    public function deleteProdi($id){
-        $query = "DELETE FROM tb_prodi WHERE kode_prodi = ?";
+    // Method untuk menghapus data profesi
+    public function deleteProfesi($id){
+        $query = "DELETE FROM tb_profesi WHERE kode_profesi = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
