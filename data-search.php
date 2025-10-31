@@ -121,7 +121,7 @@ if(isset($_GET['search'])){
 															<td>'.($index + 1).'</td>
 															<td>'.$selebriti['kode'].'</td>
 															<td>'.$selebriti['nama'].'</td>
-															<td>'.$selebriti['prodi'].'</td>
+															<td>'.$selebriti['profesi'].'</td>
 															<td>'.$selebriti['provinsi'].'</td>
 															<td>'.$selebriti['alamat'].'</td>
 															<td>'.$selebriti['medsos'].'</td>

@@ -3,7 +3,7 @@
 include_once 'config/class-master.php';
 $master = new MasterData();
 // Mengambil daftar profesi, provinsi, dan status selebriti
-$prodiList = $master->getProdi();
+$profesiList = $master->getProfesi();
 // Mengambil daftar provinsi
 $provinsiList = $master->getProvinsi();
 // Mengambil daftar status selebriti

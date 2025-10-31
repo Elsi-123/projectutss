@@ -19,41 +19,39 @@
 CREATE DATABASE IF NOT EXISTS `db_simplecrud` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */;
 USE `db_simplecrud`;
 
--- Dumping structure for table db_simplecrud.tb_mahasiswa
-CREATE TABLE IF NOT EXISTS `tb_mahasiswa` (
-  `id_mhs` int(11) NOT NULL AUTO_INCREMENT,
-  `nim_mhs` char(12) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `nama_mhs` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `prodi_mhs` char(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+-- Dumping structure for table db_simplecrud.tb_selebriti
+CREATE TABLE IF NOT EXISTS `tb_selebriti` (
+  `id_slb` int(11) NOT NULL AUTO_INCREMENT,
+  `kode_slb` char(12) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `nama_slb` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `profesi_slb` char(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `alamat` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `provinsi` mediumint(3) NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `telp` char(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `medsos` char(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `status_mhs` tinyint(1) NOT NULL,
-  PRIMARY KEY (`id_mhs`)
+  PRIMARY KEY (`id_slb`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_simplecrud.tb_mahasiswa: ~0 rows (approximately)
+-- Dumping data for table db_simplecrud.tb_selebriti: ~0 rows (approximately)
 
--- Dumping structure for table db_simplecrud.tb_prodi
-CREATE TABLE IF NOT EXISTS `tb_prodi` (
-  `kode_prodi` char(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama_prodi` char(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`kode_prodi`)
+-- Dumping structure for table db_simplecrud.tb_profesi
+CREATE TABLE IF NOT EXISTS `tb_profesi` (
+  `kode_profesi` char(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama_profesi` char(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`kode_profesi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_simplecrud.tb_prodi: ~9 rows (approximately)
-INSERT INTO `tb_prodi` (`kode_prodi`, `nama_prodi`) VALUES
-	('ARS', 'Arsitek'),
-	('BD', 'Bisnis Digital'),
-	('DI', 'Desain Interior'),
-	('DKV', 'Desain Komunikasi Visual'),
-	('DM', 'Desain Mode'),
-	('MBD', 'Magister Bisnis Digital'),
-	('MDS', 'Magister Desain'),
-	('MR', 'Manajemen Ritel'),
-	('STI', 'Sistem dan Teknologi Informasi');
-
+-- Dumping data for table db_simplecrud.tb_profesi: ~9 rows (approximately)
+INSERT INTO `tb_profesi` (`kode_profesi`, `nama_profesi`) VALUES
+	('ATS', 'Aktris'),
+	('ATR', 'Aktor'),
+	('PYI', 'Penyanyi'),
+	('PSTR', 'Presenter'),
+	('MD', 'Model'),
+	('KMK', 'Komika'),
+	('SRD', 'Sutradara');
+	
 -- Dumping structure for table db_simplecrud.tb_provinsi
 CREATE TABLE IF NOT EXISTS `tb_provinsi` (
   `id_provinsi` smallint(3) NOT NULL AUTO_INCREMENT,
@@ -65,8 +63,8 @@ CREATE TABLE IF NOT EXISTS `tb_provinsi` (
 INSERT INTO `tb_provinsi` (`id_provinsi`, `nama_provinsi`) VALUES
 	(1, 'Bali'),
 	(2, 'Nusa Tenggara Timur'),
-	(3, 'Nusa Tenggara Barat'),
-	(4, 'Jawa Timur'),
+	(3, 'Medan'),
+	(4, 'Jakarta'),
 	(5, 'Jawa Tengah'),
 	(6, 'Jawa Barat');
 

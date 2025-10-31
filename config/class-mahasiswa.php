@@ -8,7 +8,7 @@ class Selebriti extends Database {
     // Method untuk input data selebriti
     public function inputSelebriti($data){
         // Mengambil data dari parameter $data
-        $ids      = $data['ids'];
+        $kode     = $data['kode'];
         $nama     = $data['nama'];
         $profesi  = $data['profesi'];
         $alamat   = $data['alamat'];
@@ -17,14 +17,14 @@ class Selebriti extends Database {
         $medsos   = $data['medsos'];
         $status   = $data['status'];
         // Menyiapkan query SQL untuk insert data menggunakan prepared statement
-        $query = "INSERT INTO tb_selebriti (ids_slb, nama_slb, profesi_slb, alamat, provinsi, email, medsos, status_slb) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO tb_selebriti (kode_slb, nama_slb, profesi_slb, alamat, provinsi, email, medsos, status_slb) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
         // Mengecek apakah statement berhasil disiapkan
         if(!$stmt){
             return false;
         }
         // Memasukkan parameter ke statement
-        $stmt->bind_param("ssssssss", $ids, $nama, $profesi, $alamat, $provinsi, $email, $medsos, $status);
+        $stmt->bind_param("ssssssss", $kode, $nama, $profesi, $alamat, $provinsi, $email, $medsos, $status);
         $result = $stmt->execute();
         $stmt->close();
         // Mengembalikan hasil eksekusi query
@@ -34,7 +34,7 @@ class Selebriti extends Database {
     // Method untuk mengambil semua data selebriti
     public function getAllSelebriti(){
         // Menyiapkan query SQL untuk mengambil data selebriti beserta profesi dan provinsi
-        $query = "SELECT id_slb, ids_slb, nama_slb, nama_profesi, nama_provinsi, alamat, email, medsos, status_slb 
+        $query = "SELECT id_slb, kode_slb, nama_slb, nama_profesi, nama_provinsi, alamat, email, medsos, status_slb 
                   FROM tb_selebriti
                   JOIN tb_profesi ON profesi_slb = kode_profesi
                   JOIN tb_provinsi ON provinsi = id_provinsi";
@@ -47,7 +47,7 @@ class Selebriti extends Database {
             while($row = $result->fetch_assoc()) {
                 $selebriti[] = [
                     'id' => $row['id_slb'],
-                    'ids' => $row['ids_slb'],
+                    'kode' => $row['kode_slb'],
                     'nama' => $row['nama_slb'],
                     'profesi' => $row['nama_profesi'],
                     'provinsi' => $row['nama_provinsi'],
@@ -80,7 +80,7 @@ class Selebriti extends Database {
             // Menyimpan data dalam array
             $data = [
                 'id' => $row['id_slb'],
-                'ids' => $row['ids_slb'],
+                'kode' => $row['kode_slb'],
                 'nama' => $row['nama_slb'],
                 'profesi' => $row['profesi_slb'],
                 'alamat' => $row['alamat'],
@@ -99,7 +99,7 @@ class Selebriti extends Database {
     public function editSelebriti($data){
         // Mengambil data dari parameter $data
         $id       = $data['id'];
-        $ids      = $data['ids'];
+        $kode     = $data['kode'];
         $nama     = $data['nama'];
         $profesi  = $data['profesi'];
         $alamat   = $data['alamat'];
@@ -108,13 +108,13 @@ class Selebriti extends Database {
         $medsos   = $data['medsos'];
         $status   = $data['status'];
         // Menyiapkan query SQL untuk update data menggunakan prepared statement
-        $query = "UPDATE tb_selebriti SET ids_slb = ?, nama_slb = ?, profesi_slb = ?, alamat = ?, provinsi = ?, email = ?, telp = ?, status_slb = ? WHERE id_slb = ?";
+        $query = "UPDATE tb_selebriti SET kode_slb = ?, nama_slb = ?, profesi_slb = ?, alamat = ?, provinsi = ?, email = ?, telp = ?, status_slb = ? WHERE id_slb = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
         }
         // Memasukkan parameter ke statement
-        $stmt->bind_param("ssssssssi", $ids, $nama, $profesi, $alamat, $provinsi, $email, $medsos, $status, $id);
+        $stmt->bind_param("ssssssssi", $kode, $nama, $profesi, $alamat, $provinsi, $email, $medsos, $status, $id);
         $result = $stmt->execute();
         $stmt->close();
         // Mengembalikan hasil eksekusi query
@@ -141,11 +141,11 @@ class Selebriti extends Database {
         // Menyiapkan LIKE query untuk pencarian
         $likeQuery = "%".$kataKunci."%";
         // Menyiapkan query SQL untuk pencarian data selebriti menggunakan prepared statement
-        $query = "SELECT id_slb, ids_slb, nama_slb, nama_profesi, nama_provinsi, alamat, email, medsos, status_slb 
+        $query = "SELECT id_slb, kode_slb, nama_slb, nama_profesi, nama_provinsi, alamat, email, medsos, status_slb 
                   FROM tb_selebriti
                   JOIN tb_profesi ON profesi_slb = kode_profesi
                   JOIN tb_provinsi ON provinsi = id_provinsi
-                  WHERE ids_slb LIKE ? OR nama_slb LIKE ?";
+                  WHERE kode_slb LIKE ? OR nama_slb LIKE ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             // Mengembalikan array kosong jika statement gagal disiapkan
@@ -163,7 +163,7 @@ class Selebriti extends Database {
                 // Menyimpan data selebriti dalam array
                 $selebriti[] = [
                     'id' => $row['id_slb'],
-                    'ids' => $row['ids_slb'],
+                    'kode' => $row['kode_slb'],
                     'nama' => $row['nama_mhs'],
                     'profesi' => $row['nama_profesi'],
                     'provinsi' => $row['nama_provinsi'],

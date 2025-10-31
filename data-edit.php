@@ -4,8 +4,8 @@ include_once 'config/class-master.php';
 include_once 'config/class-selebriti.php';
 $master = new MasterData();
 $selebriti = new Selebriti();
-// Mengambil daftar program studi, provinsi, dan status selebriti
-$prodiList = $master->getProdi();
+// Mengambil daftar profesi, provinsi, dan status selebriti
+$profesiList = $master->getProfesi();
 // Mengambil daftar provinsi
 $provinsiList = $master->getProvinsi();
 // Mengambil daftar status selebriti
@@ -81,7 +81,7 @@ if(isset($_GET['status'])){
                                             <div class="mb-3">
                                                 <label for="profesi" class="form-label">Profesi</label>
                                                 <select class="form-select" id="profesi" name="profesi" required>
-                                                    <option value="" selected disabled>Pilih Pofesi</option>
+                                                    <option value="" selected disabled>Pilih Profesi</option>
                                                     <?php 
                                                     // Iterasi daftar profesi dan menandai yang sesuai dengan data selebriti yang dipilih
                                                     foreach ($profesiList as $profesi){
@@ -93,7 +93,7 @@ if(isset($_GET['status'])){
                                                             $selectedProfesi = "selected";
                                                         }
                                                         // Menampilkan opsi profesi dengan penanda yang sesuai
-                                                        echo '<option value="'.$profesi['id'].'" '.$selectedProfesi.'>'.$prodi['nama'].'</option>';
+                                                        echo '<option value="'.$profesi['id'].'" '.$selectedProfesi.'>'.$profesi['nama'].'</option>';
                                                     }
                                                     ?>
                                                 </select>
