@@ -63,16 +63,16 @@ if(isset($_GET['status'])){
                                     <form action="proses/proses-profesi.php?aksi=updateprofesi" method="POST">
 									    <div class="card-body">
                                             <div class="mb-3">
-                                                <label for="nama" class="form-label">Kode Program</label>
-                                                <input type="text" class="form-control-plaintext" id="kode" name="kode" placeholder="Masukkan Kode Program Studi" value="<?php echo $dataProdi['id']; ?>" required readonly>
+                                                <label for="nama" class="form-label">Kode Profesi</label>
+                                                <input type="text" class="form-control-plaintext" id="kode" name="kode" placeholder="Masukkan Kode Profesi" value="<?php echo $dataProfesi['id']; ?>" required readonly>
                                             </div>
 											<div class="mb-3">
-												<label for="nama" class="form-label">Nama Program Studi</label>
-												<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Program Studi" value="<?php echo $dataProdi['nama']; ?>" required>
+												<label for="nama" class="form-label">Nama Profesi</label>
+												<input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Profesi" value="<?php echo $dataProfesi['nama']; ?>" required>
 											</div>
                                         </div>
 									    <div class="card-footer">
-                                            <button type="button" class="btn btn-danger me-2 float-start" onclick="window.location.href='master-prodi-list.php'">Batal</button>
+                                            <button type="button" class="btn btn-danger me-2 float-start" onclick="window.location.href='master-profesi-list.php'">Batal</button>
                                             <button type="submit" class="btn btn-warning float-end">Update Data</button>
                                         </div>
                                     </form>
