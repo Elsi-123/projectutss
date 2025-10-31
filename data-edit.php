@@ -71,12 +71,12 @@ if(isset($_GET['status'])){
 									    <div class="card-body">
                                             <input type="hidden" name="id" value="<?php echo $dataSelebriti['id']; ?>">
                                             <div class="mb-3">
-                                                <label for="nama" class="form-label">Nama Lengkap</label>
-                                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Selebriti" value="<?php echo $dataSelebriti['nama']; ?>" required>
+                                                <label for="kode" class="form-label">Kode Seleb</label>
+                                                <input type="text" class="form-control" id="kode" name="kode" placeholder="Masukkan Kode Seleb " value="<?php echo $dataSelebriti['kode']; ?>" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="agama" class="form-label">Agama</label>
-                                                <input type="text" class="form-control" id="agama" name="agama" placeholder="Masukkan agama Selebriti" value="<?php echo $dataSelebriti['agama']; ?>" required>
+                                                <label for="nama" class="form-label">Nama Lengkap</label>
+                                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Selebriti" value="<?php echo $dataSelebriti['nama']; ?>" required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="profesi" class="form-label">Profesi</label>

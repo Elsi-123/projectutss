@@ -63,8 +63,8 @@ if(isset($_GET['search'])){
 									<div class="card-body">
 										<form action="data-search.php" method="GET">
 											<div class="mb-3">
-												<label for="search" class="form-label">Masukkan Nama atau Agama Selebriti</label>
-												<input type="text" class="form-control" id="search" name="search" placeholder="Cari berdasarkan Nama atau Agama Selebriti" value="<?php echo $kataKunci; ?>" required>
+												<label for="search" class="form-label">Masukkan Kode atau Nama Selebriti</label>
+												<input type="text" class="form-control" id="search" name="search" placeholder="Cari berdasarkan Kode atau Nama Selebriti" value="<?php echo $kataKunci; ?>" required>
 											</div>
 											<button type="submit" class="btn btn-primary"><i class="bi bi-search-heart-fill"></i> Cari</button>
 										</form>
@@ -94,8 +94,8 @@ if(isset($_GET['search'])){
 													<thead>
 														<tr>
 															<th>No</th>
+															<th>Kode</th>
 															<th>Nama</th>
-															<th>Agama</th>
 															<th>Profesi</th>
 															<th>Provinsi</th>
 															<th>Alamat</th>
@@ -112,15 +112,15 @@ if(isset($_GET['search'])){
 														if($selebriti['status'] == 1){
 															$selebriti['status'] = '<span class="badge bg-success">Single</span>';
 														} elseif($selebriti['status'] == 2){
-															$mahasiswa['status'] = '<span class="badge bg-danger">Berpacaran</span>';
+															$selebriti['status'] = '<span class="badge bg-danger">Berpacaran</span>';
 														} elseif($selebriti['status'] == 3){
 															$selebriti['status'] = '<span class="badge bg-warning text-dark">Menikah</span>';
 														} 
 														// Menampilkan baris data selebriti dalam tabel
 														echo '<tr class="align-middle">
 															<td>'.($index + 1).'</td>
+															<td>'.$selebriti['kode'].'</td>
 															<td>'.$selebriti['nama'].'</td>
-															<td>'.$selebriti['agama'].'</td>
 															<td>'.$selebriti['prodi'].'</td>
 															<td>'.$selebriti['provinsi'].'</td>
 															<td>'.$selebriti['alamat'].'</td>
@@ -129,7 +129,7 @@ if(isset($_GET['search'])){
 															<td class="text-center">'.$selebriti['status'].'</td>
 															<td class="text-center">
 																<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'data-edit.php?id='.$selebriti['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>
-																<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data mahasiswa ini?\')){window.location.href=\'proses/proses-delete.php?id='.$mahasiswa['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
+																<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data mahasiswa ini?\')){window.location.href=\'proses/proses-delete.php?id='.$selebriti['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
 															</td>
 														</tr>';
 													}

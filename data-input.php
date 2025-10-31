@@ -68,12 +68,12 @@ if(isset($_GET['status'])){
                                     <form action="proses/proses-input.php" method="POST">
 									    <div class="card-body">
                                             <div class="mb-3">
-                                                <label for="nama" class="form-label">Nama Lengkap</label>
-                                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap Selebriti" required>
+                                                <label for="kode" class="form-label">Kode Seleb</label>
+                                                <input type="text" class="form-control" id="kode" name="kode" placeholder="Masukkan Kode Seleb" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label for="agama" class="form-label">Agama</label>
-                                                <input type="text" class="form-control" id="agama" name="agama" placeholder="Masukkan Agama Selebriti" required>
+                                                <label for="Nama" class="form-label">Nama Lengkap</label>
+                                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap  Selebriti" required>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="profesi" class="form-label">Profesi</label>

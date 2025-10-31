@@ -72,8 +72,8 @@ $dataSelebriti = $selebriti->getAllSelebriti();
 											<thead>
 												<tr>
 													<th>No</th>
+													<th>Kode</th>
 													<th>Nama</th>
-													<th>Agama</th>
 													<th>Profesi</th>
 													<th>Provinsi</th>
 													<th>Alamat</th>
@@ -100,8 +100,8 @@ $dataSelebriti = $selebriti->getAllSelebriti();
 															} 
 															echo '<tr class="align-middle">
 																<td>'.($index + 1).'</td>
+																<td>'.$selebriti['kode'].'</td>
 																<td>'.$selebriti['nama'].'</td>
-																<td>'.$selebriti['agama'].'</td>
 																<td>'.$selebriti['profesi'].'</td>
 																<td>'.$selebriti['provinsi'].'</td>
 																<td>'.$selebriti['alamat'].'</td>
@@ -110,7 +110,7 @@ $dataSelebriti = $selebriti->getAllSelebriti();
 																<td class="text-center">'.$selebriti['status'].'</td>
 																<td class="text-center">
 																	<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'data-edit.php?id='.$selebriti['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>
-																	<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data mahasiswa ini?\')){window.location.href=\'proses/proses-delete.php?id='.$mahasiswa['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
+																	<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data mahasiswa ini?\')){window.location.href=\'proses/proses-delete.php?id='.$selebriti['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
 																</td>
 															</tr>';
 														}
