@@ -164,7 +164,7 @@ class Selebriti extends Database {
                 $selebriti[] = [
                     'id' => $row['id_slb'],
                     'kode' => $row['kode_slb'],
-                    'nama' => $row['nama_mhs'],
+                    'nama' => $row['nama_slb'],
                     'profesi' => $row['nama_profesi'],
                     'provinsi' => $row['nama_provinsi'],
                     'alamat' => $row['alamat'],

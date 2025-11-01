@@ -1,9 +1,9 @@
 <?php
 
 // Memasukkan file class-selebriti.php untuk mengakses class Selebriti
-include '../config/class-selebriti.php';
+include '../config/class-mahasiswa.php';
 // Membuat objek dari class Selebriti
-$selebriti = new Selebriti();
+$Selebriti = new Selebriti();
 // Mengambil data selebriti dari form input menggunakan metode POST dan menyimpannya dalam array
 $dataSelebriti = [
     'kode' => $_POST['kode'],
@@ -16,7 +16,7 @@ $dataSelebriti = [
     'status' => $_POST['status']
 ];
 // Memanggil method inputSelebriti untuk memasukkan data selebriti dengan parameter array $dataSelebriti
-$input = $selebriti->inputSelebriti($dataSelebriti);
+$input = $Selebriti->inputSelebriti($dataSelebriti);
 // Mengecek apakah proses input berhasil atau tidak - true/false
 if($input){
     // Jika berhasil, redirect ke halaman data-list.php dengan status inputsuccess

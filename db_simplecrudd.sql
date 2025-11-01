@@ -16,7 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`db_simplecrud` /*!40100 DEFAULT CHARACT
 
 USE `db_simplecrud`;
 
-<<<<<<< HEAD
 -- Dumping structure for table db_simplecrud.tb_selebriti
 CREATE TABLE IF NOT EXISTS `tb_selebriti` (
   `id_slb` int(11) NOT NULL AUTO_INCREMENT,
@@ -42,14 +41,14 @@ CREATE TABLE IF NOT EXISTS `tb_profesi` (
 
 -- Dumping data for table db_simplecrud.tb_profesi: ~9 rows (approximately)
 INSERT INTO `tb_profesi` (`kode_profesi`, `nama_profesi`) VALUES
-	('ATS', 'Aktris'),
-	('ATR', 'Aktor'),
+	('AKT', 'Aktor'),
+	('ATR', 'Aktris'),
 	('PYI', 'Penyanyi'),
 	('PSTR', 'Presenter'),
 	('MD', 'Model'),
 	('KMK', 'Komika'),
 	('SRD', 'Sutradara');
-	
+
 -- Dumping structure for table db_simplecrud.tb_provinsi
 CREATE TABLE IF NOT EXISTS `tb_provinsi` (
   `id_provinsi` smallint(3) NOT NULL AUTO_INCREMENT,
@@ -65,50 +64,6 @@ INSERT INTO `tb_provinsi` (`id_provinsi`, `nama_provinsi`) VALUES
 	(4, 'Jakarta'),
 	(5, 'Jawa Tengah'),
 	(6, 'Jawa Barat');
-=======
-/*Table structure for table `tb_profesi` */
-
-DROP TABLE IF EXISTS `tb_profesi`;
-
-CREATE TABLE `tb_profesi` (
-  `kode_profesi` char(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `nama_profesi` char(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`kode_profesi`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `tb_profesi` */
-
-insert  into `tb_profesi`(`kode_profesi`,`nama_profesi`) values 
-('ARS','Arsitek'),
-('BD','Bisnis Digital'),
-('DI','Desain Interior'),
-('DKV','Desain Komunikasi Visual'),
-('DM','Desain Mode'),
-('MBD','Magister Bisnis Digital'),
-('MDS','Magister Desain'),
-('MR','Manajemen Ritel'),
-('STI','Sistem dan Teknologi Informasi');
-
-/*Table structure for table `tb_provinsi` */
-
-DROP TABLE IF EXISTS `tb_provinsi`;
-
-CREATE TABLE `tb_provinsi` (
-  `id_provinsi` smallint NOT NULL AUTO_INCREMENT,
-  `nama_provinsi` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id_provinsi`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-/*Data for the table `tb_provinsi` */
->>>>>>> d8d2b5346292833b8e82e63690aa61d5ca96f5f9
-
-insert  into `tb_provinsi`(`id_provinsi`,`nama_provinsi`) values 
-(1,'Bali'),
-(2,'Nusa Tenggara Timur'),
-(3,'Nusa Tenggara Barat'),
-(4,'Jawa Timur'),
-(5,'Jawa Tengah'),
-(6,'Jawa Barat');
 
 /*Table structure for table `tb_selebriti` */
 

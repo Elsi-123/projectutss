@@ -12,7 +12,7 @@ class MasterData extends Database {
         $profesi = [];
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $prodi[] = [
+                $profesi[] = [
                     'id' => $row['kode_profesi'],
                     'nama' => $row['nama_profesi']
                 ];
@@ -74,7 +74,7 @@ class MasterData extends Database {
         $profesi = null;
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
-            $prodi = [
+            $profesi = [
                 'id' => $row['kode_profesi'],
                 'nama' => $row['nama_profesi']
             ];

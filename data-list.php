@@ -1,7 +1,7 @@
 <?php
 
-include_once 'config/class-selebriti.php';
-$selebriti = new selebriti();
+include_once 'config/class-mahasiswa.php';
+$Selebriti = new Selebriti();
 // Menampilkan alert berdasarkan status yang diterima melalui parameter GET
 if(isset($_GET['status'])){
 	// Mengecek nilai parameter GET 'status' dan menampilkan alert yang sesuai menggunakan JavaScript
@@ -15,7 +15,7 @@ if(isset($_GET['status'])){
 		echo "<script>alert('Gagal menghapus data selebriti. Silakan coba lagi.');</script>";
 	}
 }
-$dataSelebriti = $selebriti->getAllSelebriti();
+$dataSelebriti = $Selebriti->getAllSelebriti();
 
 ?>
 <!doctype html>
@@ -87,7 +87,7 @@ $dataSelebriti = $selebriti->getAllSelebriti();
 												<?php
 													if(count($dataSelebriti) == 0){
 													    echo '<tr class="align-middle">
-															<td colspan="10" class="text-center">Tidak ada data mahasiswa.</td>
+															<td colspan="10" class="text-center">Tidak ada data selebriti.</td>
 														</tr>';
 													} else {
 														foreach ($dataSelebriti as $index => $selebriti){
@@ -110,7 +110,7 @@ $dataSelebriti = $selebriti->getAllSelebriti();
 																<td class="text-center">'.$selebriti['status'].'</td>
 																<td class="text-center">
 																	<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'data-edit.php?id='.$selebriti['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>
-																	<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data mahasiswa ini?\')){window.location.href=\'proses/proses-delete.php?id='.$selebriti['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
+																	<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data selebriti ini?\')){window.location.href=\'proses/proses-delete.php?id='.$selebriti['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
 																</td>
 															</tr>';
 														}

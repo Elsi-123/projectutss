@@ -1,14 +1,14 @@
 <?php
 
-include_once 'config/class-selebriti.php';
-$Selebriti = new selebriti();
+include_once 'config/class-mahasiswa.php';
+$Selebriti = new Selebriti();
 $kataKunci = '';
 // Mengecek apakah parameter GET 'search' ada
 if(isset($_GET['search'])){
 	// Mengambil kata kunci pencarian dari parameter GET 'search'
 	$kataKunci = $_GET['search'];
 	// Memanggil method searchSelebriti untuk mencari data selebriti berdasarkan kata kunci dan menyimpan hasil dalam variabel $cariSelebriti
-	$cariSelebriti = $selebriti->searchSelebriti($kataKunci);
+	$cariSelebriti = $Selebriti->searchSelebriti($kataKunci);
 } 
 ?>
 <!doctype html>
@@ -129,7 +129,7 @@ if(isset($_GET['search'])){
 															<td class="text-center">'.$selebriti['status'].'</td>
 															<td class="text-center">
 																<button type="button" class="btn btn-sm btn-warning me-1" onclick="window.location.href=\'data-edit.php?id='.$selebriti['id'].'\'"><i class="bi bi-pencil-fill"></i> Edit</button>
-																<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data mahasiswa ini?\')){window.location.href=\'proses/proses-delete.php?id='.$selebriti['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
+																<button type="button" class="btn btn-sm btn-danger" onclick="if(confirm(\'Yakin ingin menghapus data selebriti ini?\')){window.location.href=\'proses/proses-delete.php?id='.$selebriti['id'].'\'}"><i class="bi bi-trash-fill"></i> Hapus</button>
 															</td>
 														</tr>';
 													}

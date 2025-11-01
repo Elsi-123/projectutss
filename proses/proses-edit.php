@@ -1,9 +1,9 @@
 <?php
 
 // Memasukkan file class-selebriti.php untuk mengakses class Selebriti
-include_once '../config/class-selebriti.php';
+include_once '../config/class-mahasiswa.php';
 // Membuat objek dari class Selebriti
-$selebriti = new Selebriti();
+$Selebriti = new Selebriti();
 // Mengambil data selebriti dari form edit menggunakan metode POST dan menyimpannya dalam array
 $dataSelebriti = [
     'id' => $_POST['id'],
@@ -17,7 +17,7 @@ $dataSelebriti = [
     'status' => $_POST['status']
 ];
 // Memanggil method editSelebriti untuk mengupdate data selebriti dengan parameter array $dataSelebriti
-$edit = $selebriti->editSelebriti($dataSelebriti);
+$edit = $Selebriti->editSelebriti($dataSelebriti);
 // Mengecek apakah proses edit berhasil atau tidak - true/false
 if($edit){
     // Jika berhasil, redirect ke halaman data-list.php dengan status editsuccess

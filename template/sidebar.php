@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-header">MASTER DATA</li>
                 <li class="nav-item">
-                    <a href="master-prodi-list.php" class="nav-link">
+                    <a href="master-profesi-list.php" class="nav-link">
                         <i class="nav-icon bi bi-building"></i>
                         <p>Profesi</p>
                     </a>

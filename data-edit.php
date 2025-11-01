@@ -1,9 +1,9 @@
 <?php 
 
 include_once 'config/class-master.php';
-include_once 'config/class-selebriti.php';
+include_once 'config/class-mahasiswa.php';
 $master = new MasterData();
-$selebriti = new Selebriti();
+$Selebriti = new Selebriti();
 // Mengambil daftar profesi, provinsi, dan status selebriti
 $profesiList = $master->getProfesi();
 // Mengambil daftar provinsi
@@ -11,7 +11,7 @@ $provinsiList = $master->getProvinsi();
 // Mengambil daftar status selebriti
 $statusList = $master->getStatus();
 // Mengambil data selebriti yang akan diedit berdasarkan id dari parameter GET
-$dataselebriti = $selebriti->getUpdateSelebriti($_GET['id']);
+$dataSelebriti = $Selebriti->getUpdateSelebriti($_GET['id']);
 if(isset($_GET['status'])){
     if($_GET['status'] == 'failed'){
         echo "<script>alert('Gagal mengubah data selebriti. Silakan coba lagi.');</script>";
