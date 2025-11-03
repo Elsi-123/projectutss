@@ -41,13 +41,13 @@ CREATE TABLE IF NOT EXISTS `tb_profesi` (
 
 -- Dumping data for table db_simplecrud.tb_profesi: ~9 rows (approximately)
 INSERT INTO `tb_profesi` (`kode_profesi`, `nama_profesi`) VALUES
-	('AKT', 'Aktor'),
-	('ATR', 'Aktris'),
-	('PYI', 'Penyanyi'),
-	('PSTR', 'Presenter'),
-	('MD', 'Model'),
-	('KMK', 'Komika'),
-	('SRD', 'Sutradara');
+	('AKT01', 'Aktor'),
+	('ATR01', 'Aktris'),
+	('PEN01', 'Penyanyi'),
+	('PRE01', 'Presenter'),
+	('MDL01', 'Model'),
+	('KOM01', 'Komika'),
+	('STR01', 'Sutradara');
 
 -- Dumping structure for table db_simplecrud.tb_provinsi
 CREATE TABLE IF NOT EXISTS `tb_provinsi` (

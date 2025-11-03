@@ -54,7 +54,7 @@ class Selebriti extends Database {
                     'alamat' => $row['alamat'],
                     'email' => $row['email'],
                     'medsos' => $row['medsos'],
-                    'status' => $row['status_mhs']
+                    'status' => $row['status_slb']
                 ];
             }
         }
@@ -108,7 +108,7 @@ class Selebriti extends Database {
         $medsos   = $data['medsos'];
         $status   = $data['status'];
         // Menyiapkan query SQL untuk update data menggunakan prepared statement
-        $query = "UPDATE tb_selebriti SET kode_slb = ?, nama_slb = ?, profesi_slb = ?, alamat = ?, provinsi = ?, email = ?, telp = ?, status_slb = ? WHERE id_slb = ?";
+        $query = "UPDATE tb_selebriti SET kode_slb = ?, nama_slb = ?, profesi_slb = ?, alamat = ?, provinsi = ?, email = ?, medsos = ?, status_slb = ? WHERE id_slb = ?";
         $stmt = $this->conn->prepare($query);
         if(!$stmt){
             return false;
