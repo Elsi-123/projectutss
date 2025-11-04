@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `tb_selebriti` (
   `provinsi` mediumint(3) NOT NULL,
   `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `medsos` char(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `status_mhs` tinyint(1) NOT NULL,
+  `status_slb` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_slb`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

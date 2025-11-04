@@ -1,5 +1,6 @@
 <?php
 
+
 include_once 'config/class-mahasiswa.php';
 $Selebriti = new Selebriti();
 // Menampilkan alert berdasarkan status yang diterima melalui parameter GET
